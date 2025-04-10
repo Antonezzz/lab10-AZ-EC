@@ -1,6 +1,6 @@
 import math
 
-"""
+
 # First example
 import math
 
