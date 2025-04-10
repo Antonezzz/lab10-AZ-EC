@@ -1,3 +1,6 @@
+#https://github.com/Antonezzz/lab10-AZ-EC
+#Partner 1: Anthony Zheng
+#Partner 2: Edgar Canaan
 import math
 
 def square_root(a):
