@@ -11,22 +11,31 @@ def square_root(a):
 def hypotenuse(a, b):
     return math.hypot(a,b)
 
+# First example
+import math
+
 def add(a, b): 
     return a + b
 
-def subtract(a, b):
-    return a - b
 
-def multiply(a, b):
+def mul(a,b):
     return a * b
 
-def divide(a, b):
+def div(a,b):
     try:
-        if a == 0:
+        if  a == 0:
             raise ZeroDivisionError
-        return a / b
-    except ZeroDivisionError as error:
-        return error
+        return b/a
+
+    except ZeroDivisionError as e:
+        return e
+
+def exp(a,b):
+
+    return a**b
+
+def subtract(a, b):
+    return a - b
 
 def logarithm(a, b):
     try:
@@ -35,8 +44,7 @@ def logarithm(a, b):
         return math.log(a, b)
     except ValueError as error:
         return error
-def exponent(a, b):
-    return a**b
+
 
 
 
