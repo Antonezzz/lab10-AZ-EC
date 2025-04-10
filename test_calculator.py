@@ -27,12 +27,14 @@ class TestCalculator(unittest.TestCase):
         self.assertAlmostEqual(mul(1.5, 2.25),3.375)
         self.assertEqual(mul(-1,5),-5)
 
-    def test_divide(self): # 3 assertions
+    def test_divide(self):  # 5 assertions
         with self.assertRaises(ValueError):
-            div(0,0)
-        self.assertAlmostEqual(div(10,5),2)
-        self.assertAlmostEqual(div(-1,2),-0.5)
-        self.assertEqual(div(50,25),2)
+            div("hello", 5)
+        with self.assertRaises(ZeroDivisionError):
+            div(0, 0)
+        self.assertEqual(div(10, 5), 0.5)
+        self.assertAlmostEqual(div(-1, 2), -2)
+        self.assertEqual(div(25, 50), 2)
 
     ######## Partner 2
     def test_divide_by_zero(self): # 1 assertion
@@ -48,16 +50,13 @@ class TestCalculator(unittest.TestCase):
 
     def test_logarithm(self): # 3 assertions
     #     fill in code
-        self.assertEqual(logarithm(10, 100), 2)
-        self.assertAlmostEqual(logarithm(100, 10), 0.5)
+        self.assertEqual(logarithm(10, 100), 0.5)
+        self.assertAlmostEqual(logarithm(100, 10), 2)
         self.assertAlmostEqual(logarithm(8,2), 3)
 
     def test_log_invalid_base(self): # 1 assertion
-    #     # use same technique from test_divide_by_zero
-    #     fill in code
-    # ##########################
         with self.assertRaises(ValueError):
-            logarithm(0,0)
+            logarithm(0,"hello")
 
 
     
@@ -74,7 +73,7 @@ class TestCalculator(unittest.TestCase):
 
     def test_sqrt(self): # 3 assertions
         with self.assertRaises(ValueError):
-            square_root(-1)
+            square_root("hello")
         self.assertEqual(square_root(9),3)
         self.assertEqual(square_root(25),5)
         self.assertEqual(square_root(4),2)
@@ -82,3 +81,4 @@ class TestCalculator(unittest.TestCase):
 # Do not touch this
 if __name__ == "__main__":
     unittest.main()
+

@@ -5,11 +5,13 @@ import math
 
 def square_root(a):
     try:
+        if not isinstance(a, (int, float)):
+            raise ValueError
         if a < 0:
             raise ValueError
         return math.sqrt(a)
     except ValueError as error:
-        return error
+        raise
 
 def hypotenuse(a, b):
     return math.hypot(a,b)
@@ -23,15 +25,15 @@ def add(a, b):
 
 def mul(a,b):
     return a * b
-
-def div(a,b):
+def div(a, b):
     try:
-        if  a == 0:
-            raise ZeroDivisionError
-        return b/a
-
-    except ZeroDivisionError as e:
-        return e
+        if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+            raise ValueError("Inputs must be numbers")
+        if a == 0:
+            raise ZeroDivisionError("Cannot divide by zero")
+        return b / a
+    except ZeroDivisionError:
+        raise
 
 def exp(a,b):
 
@@ -40,13 +42,13 @@ def exp(a,b):
 def subtract(a, b):
     return a - b
 
+
 def logarithm(a, b):
-    try:
-        if a <= 0 or a == 1 or b <= 0:
-            raise ValueError
-        return math.log(a, b)
-    except ValueError as error:
-        return error
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise ValueError("Inputs must be numeric")
+    if a <= 0 or b <= 0 or b == 1:
+        raise ValueError("Invalid logarithm input")
+    return math.log(a, b)
 
 
 
