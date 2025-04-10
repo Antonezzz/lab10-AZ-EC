@@ -1,7 +1,5 @@
 import math
 
-<<<<<<< HEAD
-=======
 def square_root(a):
     try:
         if a < 0:
@@ -12,7 +10,6 @@ def square_root(a):
 
 def hypotenuse(a, b):
     return math.hypot(a,b)
->>>>>>> 63902e42977b540e2aba4ac00f6bcabf98c7df02
 
 # First example
 import math
