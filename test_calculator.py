@@ -19,7 +19,7 @@ class TestCalculator(unittest.TestCase):
 
         self.assertEqual(subtract(5,2),3)
         self.assertAlmostEqual(subtract(3.1, 2.6), 0.5)
-        self.assertEqual(subtract(-4, -3), -7)
+        self.assertEqual(subtract(-4, -3), -1)
 
     ####### Partner 1
     def test_multiply(self): # 3 assertions
